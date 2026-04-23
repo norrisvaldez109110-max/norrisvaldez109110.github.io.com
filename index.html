@@ -1,0 +1,1170 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>深圳市拾逸佳科技有限公司 - 拾取美好 逸享生活</title>
+    <link href="https://fonts.googleapis.com/css2?family=ZCOOL+XiaoWei&family=Noto+Sans+SC:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --bg-warm: #faf8f5;
+            --bg-cream: #f5f2ed;
+            --bg-white: #ffffff;
+            --text-dark: #2c2c2c;
+            --text-main: #4a4a4a;
+            --text-light: #8a8a8a;
+            --accent-terracotta: #c67b5c;
+            --accent-sage: #8fae8b;
+            --accent-sand: #d4c5b0;
+            --accent-terracotta-dark: #a65d40;
+            --accent-rose: #c9a0a0;
+            --accent-olive: #6b7f5c;
+            --border-soft: #e5e0d8;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Noto Sans SC', sans-serif;
+            background: var(--bg-warm);
+            color: var(--text-main);
+            line-height: 1.8;
+            overflow-x: hidden;
+        }
+
+        /* 导航栏 */
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            padding: 20px 60px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: rgba(250, 248, 245, 0.95);
+            backdrop-filter: blur(15px);
+            border-bottom: 1px solid var(--border-soft);
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .logo-icon {
+            width: 50px;
+            height: 50px;
+            background: linear-gradient(135deg, var(--accent-terracotta) 0%, var(--accent-rose) 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: 'ZCOOL XiaoWei', serif;
+            font-size: 1.6rem;
+            color: white;
+            border-radius: 50%;
+            position: relative;
+        }
+
+        .logo-icon::before {
+            content: '';
+            position: absolute;
+            inset: -6px;
+            border: 2px solid var(--accent-terracotta);
+            border-radius: 50%;
+            opacity: 0.3;
+        }
+
+        .logo-text {
+            font-family: 'ZCOOL XiaoWei', serif;
+            font-size: 1.6rem;
+            color: var(--text-dark);
+            letter-spacing: 5px;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 50px;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: var(--text-light);
+            text-decoration: none;
+            font-size: 0.95rem;
+            font-weight: 500;
+            letter-spacing: 1px;
+            transition: all 0.3s;
+            position: relative;
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--accent-terracotta);
+            transition: width 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: var(--accent-terracotta);
+        }
+
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+
+        .nav-cta {
+            padding: 12px 30px;
+            background: var(--accent-terracotta);
+            color: white;
+            border: none;
+            font-family: inherit;
+            font-size: 0.9rem;
+            font-weight: 500;
+            letter-spacing: 1px;
+            cursor: pointer;
+            transition: all 0.3s;
+            border-radius: 30px;
+        }
+
+        .nav-cta:hover {
+            background: var(--accent-terracotta-dark);
+            transform: translateY(-2px);
+        }
+
+        /* Hero 区域 */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            position: relative;
+            padding: 0 80px;
+            overflow: hidden;
+        }
+
+        .hero-bg {
+            position: absolute;
+            inset: 0;
+            background: 
+                radial-gradient(ellipse at 30% 70%, rgba(198, 123, 92, 0.08) 0%, transparent 50%),
+                radial-gradient(ellipse at 70% 30%, rgba(143, 174, 139, 0.1) 0%, transparent 50%),
+                var(--bg-warm);
+        }
+
+        /* 装饰圆形 */
+        .hero-circle {
+            position: absolute;
+            border-radius: 50%;
+            opacity: 0.5;
+        }
+
+        .hero-circle-1 {
+            width: 400px;
+            height: 400px;
+            background: rgba(212, 197, 176, 0.2);
+            top: 10%;
+            right: 10%;
+        }
+
+        .hero-circle-2 {
+            width: 300px;
+            height: 300px;
+            background: rgba(201, 160, 160, 0.15);
+            bottom: 15%;
+            left: 5%;
+        }
+
+        .hero-circle-3 {
+            width: 200px;
+            height: 200px;
+            background: rgba(143, 174, 139, 0.1);
+            top: 60%;
+            right: 30%;
+        }
+
+        .hero-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 100px;
+            align-items: center;
+            max-width: 1400px;
+            margin: 0 auto;
+            width: 100%;
+            position: relative;
+            z-index: 1;
+            padding-top: 80px;
+        }
+
+        .hero-text {
+            max-width: 520px;
+        }
+
+        .hero-subtitle {
+            font-size: 0.9rem;
+            color: var(--accent-terracotta);
+            letter-spacing: 5px;
+            margin-bottom: 25px;
+            font-weight: 500;
+        }
+
+        .hero-title {
+            font-family: 'ZCOOL XiaoWei', serif;
+            font-size: 4rem;
+            font-weight: 400;
+            line-height: 1.3;
+            color: var(--text-dark);
+            margin-bottom: 30px;
+            letter-spacing: 8px;
+        }
+
+        .hero-title .accent {
+            color: var(--accent-terracotta);
+            display: block;
+        }
+
+        .hero-desc {
+            font-size: 1.1rem;
+            color: var(--text-light);
+            margin-bottom: 40px;
+            line-height: 2;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 20px;
+        }
+
+        .btn-primary {
+            padding: 16px 40px;
+            background: var(--accent-terracotta);
+            color: white;
+            border: none;
+            font-family: inherit;
+            font-size: 1rem;
+            font-weight: 500;
+            letter-spacing: 2px;
+            cursor: pointer;
+            transition: all 0.3s;
+            border-radius: 35px;
+        }
+
+        .btn-primary:hover {
+            background: var(--accent-terracotta-dark);
+            transform: translateY(-3px);
+            box-shadow: 0 15px 40px rgba(198, 123, 92, 0.3);
+        }
+
+        .btn-outline {
+            padding: 16px 40px;
+            background: transparent;
+            color: var(--text-dark);
+            border: 2px solid var(--border-soft);
+            font-family: inherit;
+            font-size: 1rem;
+            font-weight: 500;
+            letter-spacing: 2px;
+            cursor: pointer;
+            transition: all 0.3s;
+            border-radius: 35px;
+        }
+
+        .btn-outline:hover {
+            border-color: var(--accent-terracotta);
+            color: var(--accent-terracotta);
+        }
+
+        .hero-images {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 25px;
+            height: 550px;
+        }
+
+        .hero-img {
+            overflow: hidden;
+            border-radius: 20px;
+            position: relative;
+        }
+
+        .hero-img:first-child {
+            grid-row: span 2;
+        }
+
+        .hero-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.6s;
+        }
+
+        .hero-img:hover img {
+            transform: scale(1.05);
+        }
+
+        .hero-img::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(to top, rgba(198, 123, 92, 0.15), transparent 50%);
+            opacity: 0;
+            transition: opacity 0.4s;
+        }
+
+        .hero-img:hover::after {
+            opacity: 1;
+        }
+
+        /* 品牌理念 */
+        .philosophy {
+            padding: 120px 80px;
+            background: var(--bg-white);
+        }
+
+        .section-container {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .philosophy-header {
+            text-align: center;
+            margin-bottom: 80px;
+        }
+
+        .section-label {
+            font-size: 0.85rem;
+            color: var(--accent-terracotta);
+            letter-spacing: 5px;
+            margin-bottom: 20px;
+            font-weight: 500;
+        }
+
+        .section-title {
+            font-family: 'ZCOOL XiaoWei', serif;
+            font-size: 2.8rem;
+            color: var(--text-dark);
+            letter-spacing: 10px;
+        }
+
+        .philosophy-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 35px;
+        }
+
+        .philosophy-card {
+            text-align: center;
+            padding: 50px 30px;
+            background: var(--bg-cream);
+            border-radius: 25px;
+            transition: all 0.4s;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .philosophy-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 5px;
+            background: linear-gradient(90deg, var(--accent-terracotta), var(--accent-rose));
+            transform: scaleX(0);
+            transition: transform 0.4s;
+        }
+
+        .philosophy-card:hover::before {
+            transform: scaleX(1);
+        }
+
+        .philosophy-card:hover {
+            background: white;
+            box-shadow: 0 30px 80px rgba(0, 0, 0, 0.08);
+            transform: translateY(-10px);
+        }
+
+        .philosophy-icon {
+            width: 80px;
+            height: 80px;
+            background: linear-gradient(135deg, var(--accent-terracotta), var(--accent-rose));
+            margin: 0 auto 30px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            color: white;
+        }
+
+        .philosophy-card h3 {
+            font-family: 'ZCOOL XiaoWei', serif;
+            font-size: 1.4rem;
+            color: var(--text-dark);
+            margin-bottom: 15px;
+            letter-spacing: 3px;
+        }
+
+        .philosophy-card p {
+            font-size: 0.95rem;
+            color: var(--text-light);
+            line-height: 1.8;
+        }
+
+        /* 服务领域 */
+        .services {
+            padding: 120px 80px;
+            background: var(--bg-cream);
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+        }
+
+        .service-card {
+            background: var(--bg-white);
+            border-radius: 25px;
+            overflow: hidden;
+            transition: all 0.4s;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.03);
+        }
+
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 30px 80px rgba(0, 0, 0, 0.1);
+        }
+
+        .service-img {
+            height: 200px;
+            overflow: hidden;
+        }
+
+        .service-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s;
+        }
+
+        .service-card:hover .service-img img {
+            transform: scale(1.1);
+        }
+
+        .service-info {
+            padding: 35px;
+        }
+
+        .service-tag {
+            font-size: 0.8rem;
+            color: var(--accent-terracotta);
+            letter-spacing: 2px;
+            margin-bottom: 10px;
+        }
+
+        .service-info h3 {
+            font-family: 'ZCOOL XiaoWei', serif;
+            font-size: 1.4rem;
+            color: var(--text-dark);
+            margin-bottom: 12px;
+            letter-spacing: 2px;
+        }
+
+        .service-info p {
+            font-size: 0.95rem;
+            color: var(--text-light);
+            line-height: 1.8;
+        }
+
+        /* 产品展示 */
+        .products {
+            padding: 120px 80px;
+            background: var(--bg-white);
+        }
+
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 25px;
+        }
+
+        .product-card {
+            background: var(--bg-cream);
+            border-radius: 20px;
+            overflow: hidden;
+            transition: all 0.4s;
+        }
+
+        .product-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 25px 60px rgba(0, 0, 0, 0.1);
+        }
+
+        .product-img {
+            height: 240px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .product-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s;
+        }
+
+        .product-card:hover .product-img img {
+            transform: scale(1.08);
+        }
+
+        .product-badge {
+            position: absolute;
+            top: 15px;
+            left: 15px;
+            padding: 6px 15px;
+            background: var(--accent-terracotta);
+            color: white;
+            font-size: 0.75rem;
+            letter-spacing: 1px;
+            border-radius: 20px;
+        }
+
+        .product-info {
+            padding: 25px;
+        }
+
+        .product-info h3 {
+            font-family: 'ZCOOL XiaoWei', serif;
+            font-size: 1.2rem;
+            color: var(--text-dark);
+            margin-bottom: 8px;
+            letter-spacing: 2px;
+        }
+
+        .product-info p {
+            font-size: 0.9rem;
+            color: var(--text-light);
+            margin-bottom: 15px;
+        }
+
+        .product-price {
+            font-family: 'ZCOOL XiaoWei', serif;
+            font-size: 1.3rem;
+            color: var(--accent-terracotta);
+        }
+
+        /* 关于我们 */
+        .about {
+            padding: 120px 80px;
+            background: linear-gradient(180deg, var(--bg-cream) 0%, var(--bg-white) 100%);
+        }
+
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 80px;
+            align-items: center;
+        }
+
+        .about-images {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+
+        .about-img {
+            overflow: hidden;
+            border-radius: 20px;
+        }
+
+        .about-img:first-child {
+            grid-column: span 2;
+            height: 280px;
+        }
+
+        .about-img:last-child {
+            height: 200px;
+        }
+
+        .about-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s;
+        }
+
+        .about-img:hover img {
+            transform: scale(1.05);
+        }
+
+        .about-content {
+            max-width: 500px;
+        }
+
+        .about-content .section-label {
+            text-align: left;
+        }
+
+        .about-content h2 {
+            font-family: 'ZCOOL XiaoWei', serif;
+            font-size: 2.5rem;
+            color: var(--text-dark);
+            margin-bottom: 25px;
+            letter-spacing: 5px;
+        }
+
+        .about-content > p {
+            font-size: 1.05rem;
+            color: var(--text-light);
+            line-height: 2;
+            margin-bottom: 20px;
+        }
+
+        .about-features {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+            margin-top: 40px;
+        }
+
+        .about-feature {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 0.95rem;
+            color: var(--text-main);
+        }
+
+        .about-feature::before {
+            content: '◆';
+            color: var(--accent-terracotta);
+            font-size: 0.6rem;
+        }
+
+        /* 数据统计 */
+        .stats {
+            padding: 100px 80px;
+            background: linear-gradient(135deg, var(--accent-terracotta), var(--accent-rose));
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 50px;
+            max-width: 1000px;
+            margin: 0 auto;
+            text-align: center;
+            color: white;
+        }
+
+        .stat-number {
+            font-family: 'ZCOOL XiaoWei', serif;
+            font-size: 3.5rem;
+            margin-bottom: 10px;
+        }
+
+        .stat-label {
+            font-size: 1rem;
+            opacity: 0.9;
+            letter-spacing: 3px;
+        }
+
+        /* 合作伙伴 */
+        .partners {
+            padding: 100px 80px;
+            background: var(--bg-white);
+        }
+
+        .partners-header {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .partners-grid {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        .partner-item {
+            padding: 18px 45px;
+            background: var(--bg-cream);
+            font-family: 'ZCOOL XiaoWei', serif;
+            font-size: 1.1rem;
+            color: var(--text-light);
+            letter-spacing: 3px;
+            border-radius: 50px;
+            transition: all 0.3s;
+        }
+
+        .partner-item:hover {
+            background: var(--accent-terracotta);
+            color: white;
+        }
+
+        /* 页脚 */
+        footer {
+            padding: 80px 80px 40px;
+            background: var(--text-dark);
+            color: white;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1fr;
+            gap: 60px;
+            margin-bottom: 60px;
+        }
+
+        .footer-brand h3 {
+            font-family: 'ZCOOL XiaoWei', serif;
+            font-size: 1.8rem;
+            letter-spacing: 8px;
+            margin-bottom: 20px;
+        }
+
+        .footer-brand p {
+            font-size: 0.95rem;
+            color: rgba(255, 255, 255, 0.6);
+            line-height: 1.8;
+            margin-bottom: 25px;
+        }
+
+        .footer-social {
+            display: flex;
+            gap: 15px;
+        }
+
+        .footer-social a {
+            width: 45px;
+            height: 45px;
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: rgba(255, 255, 255, 0.6);
+            text-decoration: none;
+            transition: all 0.3s;
+        }
+
+        .footer-social a:hover {
+            background: var(--accent-terracotta);
+            border-color: var(--accent-terracotta);
+            color: white;
+        }
+
+        .footer-col h4 {
+            font-family: 'ZCOOL XiaoWei', serif;
+            font-size: 1.2rem;
+            margin-bottom: 25px;
+            letter-spacing: 3px;
+        }
+
+        .footer-col ul {
+            list-style: none;
+        }
+
+        .footer-col li {
+            margin-bottom: 12px;
+        }
+
+        .footer-col a {
+            color: rgba(255, 255, 255, 0.6);
+            text-decoration: none;
+            font-size: 0.9rem;
+            transition: color 0.3s;
+        }
+
+        .footer-col a:hover {
+            color: var(--accent-sand);
+        }
+
+        .footer-bottom {
+            padding-top: 30px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            text-align: center;
+            color: rgba(255, 255, 255, 0.4);
+            font-size: 0.9rem;
+            letter-spacing: 2px;
+        }
+
+        /* 响应式 */
+        @media (max-width: 1200px) {
+            .hero-content {
+                grid-template-columns: 1fr;
+                gap: 60px;
+            }
+            .hero-images {
+                height: 400px;
+            }
+            .philosophy-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            .services-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            .products-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 900px) {
+            header, .hero, .philosophy, .services, .products, .about, .stats, .partners, footer {
+                padding-left: 40px;
+                padding-right: 40px;
+            }
+            .hero-title {
+                font-size: 3rem;
+            }
+            .about-grid {
+                grid-template-columns: 1fr;
+            }
+            .footer-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 600px) {
+            .nav-links, .nav-cta {
+                display: none;
+            }
+            .hero-title {
+                font-size: 2.2rem;
+            }
+            .philosophy-grid, .services-grid, .products-grid, .stats-grid {
+                grid-template-columns: 1fr;
+            }
+            .footer-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <div class="logo-icon">拾</div>
+            <div class="logo-text">拾逸佳</div>
+        </div>
+        <ul class="nav-links">
+            <li><a href="#philosophy">品牌理念</a></li>
+            <li><a href="#services">服务领域</a></li>
+            <li><a href="#products">产品中心</a></li>
+            <li><a href="#about">关于我们</a></li>
+        </ul>
+        <button class="nav-cta">联系我们</button>
+    </header>
+
+    <section class="hero">
+        <div class="hero-bg"></div>
+        <div class="hero-circle hero-circle-1"></div>
+        <div class="hero-circle hero-circle-2"></div>
+        <div class="hero-circle hero-circle-3"></div>
+        
+        <div class="hero-content">
+            <div class="hero-text">
+                <p class="hero-subtitle">SHENZHEN SHIYIJIA TECHNOLOGY</p>
+                <h1 class="hero-title">
+                    深圳市拾逸佳
+                    <span class="accent">科技有限公司</span>
+                </h1>
+                <p class="hero-desc">
+                    拾取美好，逸享生活。拾逸佳科技坐落于创新之城——深圳，专注于智能生活产品的研发与创新，致力于为您打造舒适、便捷、智能的品质生活体验。
+                </p>
+                <div class="hero-buttons">
+                    <button class="btn-primary">探索产品</button>
+                    <button class="btn-outline">了解更多</button>
+                </div>
+            </div>
+            
+            <div class="hero-images">
+                <div class="hero-img">
+                    <img src="https://images.unsplash.com/photo-1497366216548-37526070297c?w=700" alt="现代办公">
+                </div>
+                <div class="hero-img">
+                    <img src="https://images.unsplash.com/photo-1586023492125-27b2c045efd7?w=400" alt="家居生活">
+                </div>
+                <div class="hero-img">
+                    <img src="https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=400" alt="智能科技">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="philosophy" id="philosophy">
+        <div class="section-container">
+            <div class="philosophy-header">
+                <p class="section-label">BRAND PHILOSOPHY</p>
+                <h2 class="section-title">品牌理念</h2>
+            </div>
+            
+            <div class="philosophy-grid">
+                <div class="philosophy-card">
+                    <div class="philosophy-icon">✧</div>
+                    <h3>拾取美好</h3>
+                    <p>用心发现生活中的每一份美好，将温暖与惊喜融入每一款产品设计之中。</p>
+                </div>
+                
+                <div class="philosophy-card">
+                    <div class="philosophy-icon">♡</div>
+                    <h3>逸享生活</h3>
+                    <p>让科技成为生活的助手而非负累，简约设计带来轻松愉悦的使用体验。</p>
+                </div>
+                
+                <div class="philosophy-card">
+                    <div class="philosophy-icon">✦</div>
+                    <h3>品质为先</h3>
+                    <p>精选优质材料，严格把控每一道工序，确保产品的耐用性与安全性。</p>
+                </div>
+                
+                <div class="philosophy-card">
+                    <div class="philosophy-icon">☆</div>
+                    <h3>创新不止</h3>
+                    <p>持续投入研发创新，以用户需求为导向，不断推出更优质的产品。</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="services" id="services">
+        <div class="section-container">
+            <div class="philosophy-header">
+                <p class="section-label">OUR SERVICES</p>
+                <h2 class="section-title">服务领域</h2>
+            </div>
+            
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-img">
+                        <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=600" alt="智能产品">
+                    </div>
+                    <div class="service-info">
+                        <p class="service-tag">核心业务</p>
+                        <h3>智能生活产品</h3>
+                        <p>智能家居、健康生活、便捷出行等领域产品的研发、生产与销售。</p>
+                    </div>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-img">
+                        <img src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?w=600" alt="技术服务">
+                    </div>
+                    <div class="service-info">
+                        <p class="service-tag">技术服务</p>
+                        <h3>产品定制研发</h3>
+                        <p>根据客户需求提供产品定制研发服务，包括外观设计、功能开发等。</p>
+                    </div>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-img">
+                        <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=600" alt="电商服务">
+                    </div>
+                    <div class="service-info">
+                        <p class="service-tag">商务服务</p>
+                        <h3>品牌运营服务</h3>
+                        <p>电商平台运营、品牌策划、营销推广等一站式品牌服务支持。</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="products" id="products">
+        <div class="section-container">
+            <div class="philosophy-header">
+                <p class="section-label">FEATURED PRODUCTS</p>
+                <h2 class="section-title">精选产品</h2>
+            </div>
+            
+            <div class="products-grid">
+                <div class="product-card">
+                    <div class="product-img">
+                        <img src="https://images.unsplash.com/photo-1545496313-99b5b8d3c78e?w=500" alt="智能家居">
+                        <span class="product-badge">热门</span>
+                    </div>
+                    <div class="product-info">
+                        <h3>智能生活套装</h3>
+                        <p>全屋智能控制 · 语音交互</p>
+                        <div class="product-price">¥ 2,680</div>
+                    </div>
+                </div>
+                
+                <div class="product-card">
+                    <div class="product-img">
+                        <img src="https://images.unsplash.com/photo-1585386959984-a4155224a1ad?w=500" alt="健康产品">
+                    </div>
+                    <div class="product-info">
+                        <h3>健康生活系列</h3>
+                        <p>空气净化 · 健康监测</p>
+                        <div class="product-price">¥ 1,580</div>
+                    </div>
+                </div>
+                
+                <div class="product-card">
+                    <div class="product-img">
+                        <img src="https://images.unsplash.com/photo-1523275335684-37898b6baf30?w=500" alt="便捷出行">
+                        <span class="product-badge">新品</span>
+                    </div>
+                    <div class="product-info">
+                        <h3>便捷出行装备</h3>
+                        <p>蓝牙设备 · 便携充电</p>
+                        <div class="product-price">¥ 899</div>
+                    </div>
+                </div>
+                
+                <div class="product-card">
+                    <div class="product-img">
+                        <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=500" alt="家居好物">
+                    </div>
+                    <div class="product-info">
+                        <h3>品质家居好物</h3>
+                        <p>生活美学 · 实用设计</p>
+                        <div class="product-price">¥ 399</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="about" id="about">
+        <div class="section-container">
+            <div class="about-grid">
+                <div class="about-images">
+                    <div class="about-img">
+                        <img src="https://images.unsplash.com/photo-1497366216548-37526070297c?w=700" alt="公司环境">
+                    </div>
+                    <div class="about-img">
+                        <img src="https://images.unsplash.com/photo-1551434678-e076c223a692?w=400" alt="团队协作">
+                    </div>
+                    <div class="about-img">
+                        <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=400" alt="产品展示">
+                    </div>
+                </div>
+                
+                <div class="about-content">
+                    <p class="section-label">OUR STORY</p>
+                    <h2>关于拾逸佳</h2>
+                    <p>深圳市拾逸佳科技有限公司创立于创新之城——深圳，公司名称蕴含"拾取美好、逸享生活"的品牌理念。我们相信，科技应该是温暖的、有品味的、让人愉悦的。</p>
+                    <p>公司专注于智能生活产品的研发与创新，产品涵盖智能家居、健康生活、便捷出行等多个领域，以简约设计与人性化功能，为用户打造舒适的品质生活体验。</p>
+                    
+                    <div class="about-features">
+                        <div class="about-feature">深圳本土品牌</div>
+                        <div class="about-feature">自主产品研发</div>
+                        <div class="about-feature">精选优质材料</div>
+                        <div class="about-feature">贴心售后服务</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="stats">
+        <div class="section-container">
+            <div class="stats-grid">
+                <div class="stat-item">
+                    <div class="stat-number">5000+</div>
+                    <div class="stat-label">服务客户</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">200+</div>
+                    <div class="stat-label">合作企业</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">80+</div>
+                    <div class="stat-label">研发产品</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">99%</div>
+                    <div class="stat-label">客户好评</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="partners">
+        <div class="section-container">
+            <div class="partners-header">
+                <p class="section-label">OUR PARTNERS</p>
+                <h2 class="section-title">合作伙伴</h2>
+            </div>
+            
+            <div class="partners-grid">
+                <div class="partner-item">华为技术</div>
+                <div class="partner-item">腾讯云</div>
+                <div class="partner-item">小米科技</div>
+                <div class="partner-item">京东电商</div>
+                <div class="partner-item">阿里巴巴</div>
+                <div class="partner-item">顺丰速运</div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="section-container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <h3>拾逸佳科技</h3>
+                    <p>深圳市拾逸佳科技有限公司，专注于智能生活产品的研发与创新，用心为您打造舒适、便捷、智能的品质生活体验。</p>
+                    <div class="footer-social">
+                        <a href="#">微</a>
+                        <a href="#">博</a>
+                        <a href="#">知</a>
+                        <a href="#">乎</a>
+                    </div>
+                </div>
+                
+                <div class="footer-col">
+                    <h4>产品中心</h4>
+                    <ul>
+                        <li><a href="#">智能生活套装</a></li>
+                        <li><a href="#">健康生活系列</a></li>
+                        <li><a href="#">便捷出行装备</a></li>
+                        <li><a href="#">品质家居好物</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-col">
+                    <h4>服务领域</h4>
+                    <ul>
+                        <li><a href="#">智能产品研发</a></li>
+                        <li><a href="#">产品定制服务</a></li>
+                        <li><a href="#">品牌运营策划</a></li>
+                        <li><a href="#">电商平台服务</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-col">
+                    <h4>联系我们</h4>
+                    <ul>
+                        <li><a href="#">商务合作</a></li>
+                        <li><a href="#">人才招聘</a></li>
+                        <li><a href="#">售后服务</a></li>
+                        <li><a href="#">常见问题</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>© 2026 深圳市拾逸佳科技有限公司 版权所有</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
